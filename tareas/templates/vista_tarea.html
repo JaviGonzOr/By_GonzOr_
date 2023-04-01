@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1 class="text-center">
+    {% load static %}
+    <img src="{% static 'index/img/logo2.png' %}" width="250" height="200">
+</h1>
+
+<div class="card">
+    <h3 class="card-header" style="color: darkorange;">VISTA DE LAS TAREAS</h3>
+    <div class="card-body">
+        <div class="table-responsive">
+
+           
+            <tbody>
+                {% for i in vista_tarea %}
+             
+
+                <h5 style="color: rgb(0, 0, 0);">Montador:</h5>
+                <h3 style="color: rgb(16, 3, 206);">{{i.usuario}}</h3>
+
+                <h5 style="color: rgb(0, 0, 0);">Cliente:</h5>
+                <h5 style="color: rgb(211, 211, 57);">{{i.cliente}}</h5>              
+                
+                <h5 style="color: rgb(0, 0, 0);">Titulo:</h5>
+                <div style="color: gray;">{{i.titulo}}</div>
+
+                <h5 style="color: rgb(0, 0, 0);">Marca y Modelo:</h5>
+                <div style="color: gray;">{{i.proveedor}} {{i.modelo}}</div>
+
+                <h5 style="color: rgb(0, 0, 0);">Descripción:</h5>
+                <div style="color: grey;">{{i.descripcion}}</div>
+
+                <h5 style="color: rgb(0, 0, 0);">Material:</h5>
+                <div style="color: grey;">{{i.material}}</div>
+                
+                <h5 style="color: rgb(0, 0, 0);">Imagenes:</h5>
+
+            </tbody>
+           
+            
+
+            <div>
+                <a href="{{i.archivos.last.imagen.url}}"><img src="{{i.archivos.last.imagen.url}}" height="250"
+                        width="350"></a>
+                <br>
+                <br>
+               
+                <a href="{{i.archivos.first.imagen.url}}" class="btn btn-danger">Ficha Técnica en PDF</a>
+
+
+
+
+
+            </div>
+
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+            {% endfor %}
+
+
+
+            {% endblock %}

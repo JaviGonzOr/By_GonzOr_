@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1 class="text-center">
+    {% load static %}
+    <img src="{% static 'index/img/logo2.png' %}" width="250" height="200">
+</h1>
+
+<div class="card">
+    <h2>
+        <div class="card-header" style="color: orange;">Tarjeta Cliente</div>
+    </h2>
+    <div class="card w-75 mb-3">
+        <div class="card-body">
+            <div class="table-responsive">
+                {% for i in vista_visita %}
+
+                <div class="card">
+                    <h5 style="color: red;">Cliente:</h5>
+                    <h5 style="color: rgb(16, 3, 206);">{{i.nombre}} {{i.apellidos}}</h5>
+                </div>
+
+                <div class="card">
+                    <h5 style="color: red;">Direccion:</h5>
+                    <div style="color: black;">{{i.direccion}}</div>
+                </div>
+
+                <div class="card">
+                    <h5 style="color: red;">Telefono:</h5>
+                    <div style="color: black;">{{i.telefono}}</div>
+                </div>
+
+                <div class="card">
+                    <h5 style="color: red;">Observaciones:</h5>
+                    <div style="color: black;">{{i.observaciones}}</div>
+                </div>
+
+                <div class="card">
+                    <h5 style="color: red;">Fecha y hora:</h5>
+                    <div style="color: black;">{{i.visita}}</div>
+                </div>
+
+                <div class="card">
+                    <h5 style="color: red;">Ubicacion:</h5>
+                    <a href="{{i.ubicacion}}"><i class='fas fa-paper-plane'
+                            style='font-size:48px;color:rgb(58, 25, 222)'></i></a>
+
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

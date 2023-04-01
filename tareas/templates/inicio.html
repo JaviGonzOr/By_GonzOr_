@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main>
+    <div>
+        
+        <h1 class="text-center">
+
+            {% load static %}
+            <img src="{% static 'index/img/logo2.png' %}" width="200" height="150">
+        </h1>
+        <h2>
+            <p class="text-center text-danger">Planea, Gestiona y Sigue Todas las Tareas con un Software Flexible. Una
+                Nueva Forma Eficiente y Transparente de Organizar Todas las Tareas de Tu Empresa.</p>
+
+        </h2>
+        {% load static %}
+        <img src="{% static 'index/img/adela.jpg' %}" width="1100" height="680">
+        <h4>
+            <a href="https://www.instagram.com/xemeneiespou/" style="color: rgb(63, 1, 59);">Siguenos en
+                <img src="{% static 'index/img/insta.png' %}" width="30" height="30"></a>
+        </h4>
+       
+
+    </div>
+</main>
+
+
+
+{% endblock %}
