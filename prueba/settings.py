@@ -136,7 +136,9 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+STATICFILES_STORAGE = (
+    "django_forgiving_collecstatic.storages.ForgivingManifestStaticFilesStorage"
+)
 
 LOGIN_URL = 'i_sesion'
 
