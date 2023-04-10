@@ -90,12 +90,7 @@ WSGI_APPLICATION = 'prueba.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url(
-    default='sqlite:///db.sqlite3',
-    conn_max_age=600
-    )
-}
+DATABASES = {'default': dj_database_url.config(default='postgres://user:pass@localhost/dbname')}
 
 
 # Password validation
